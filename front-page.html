@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>The World on Tuesday — 24 November 2026</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { width: 768px; height: 1024px; }
+  body {
+    font-family: Georgia, "Times New Roman", serif;
+    background: #f7f2e7;
+    color: #191713;
+    padding: 10px 18px 8px 18px;
+    overflow: hidden;
+  }
+  /* ---------- masthead ---------- */
+  .masthead { text-align: center; border-bottom: 3.5px solid #191713; padding-bottom: 4px; }
+  .masthead h1 { font-size: 42px; letter-spacing: 0.5px; line-height: 1.0; font-weight: 900; }
+  .masthead .tag { font-size: 10px; font-style: italic; margin-top: 1px; color: #3c372e; }
+  .dateline {
+    display: flex; justify-content: space-between; align-items: baseline;
+    border-bottom: 1.2px solid #191713; padding: 3.5px 1px 4px 1px;
+    font-family: Helvetica, Arial, sans-serif; font-size: 10px; text-transform: uppercase; letter-spacing: 0.6px;
+  }
+  .dateline b { font-size: 11.5px; }
+  /* ---------- timeline ---------- */
+  .timeline { border-bottom: 1.2px solid #191713; padding: 3px 0 4px 0; font-family: Helvetica, Arial, sans-serif; }
+  .timeline .t-head { font-size: 8.5px; font-weight: 700; letter-spacing: 1.4px; text-transform: uppercase; margin-bottom: 2px; }
+  .timeline .t-row { display: flex; gap: 8px; }
+  .timeline .t-day { flex: 1; font-size: 8.4px; line-height: 1.3; border-left: 2px solid #b8ad93; padding-left: 5px; }
+  .timeline .t-day b { text-transform: uppercase; font-size: 8.8px; }
+  .timeline .today { border-left-color: #9c1f1f; background: #f1e8d2; }
+  /* ---------- story furniture ---------- */
+  .kicker { font-family: Helvetica, Arial, sans-serif; font-size: 8.5px; font-weight: 700; letter-spacing: 1.3px; text-transform: uppercase; color: #9c1f1f; }
+  .num {
+    display: inline-block; background: #191713; color: #f7f2e7; border-radius: 50%;
+    width: 15px; height: 15px; line-height: 15px; text-align: center;
+    font-family: Helvetica, Arial, sans-serif; font-size: 9.5px; font-weight: 700; margin-right: 4px;
+    vertical-align: 1px;
+  }
+  .stamp {
+    display: inline-block; font-family: Helvetica, Arial, sans-serif; font-size: 7.8px; font-weight: 700;
+    letter-spacing: 0.8px; padding: 1px 4px; border: 1.2px solid #1d5c2e; color: #1d5c2e;
+    text-transform: uppercase; vertical-align: 2px; margin-left: 5px;
+  }
+  .stamp.rep { border-color: #8a6d1d; color: #8a6d1d; }
+  .src { font-family: Helvetica, Arial, sans-serif; font-size: 8px; color: #57503f; text-transform: uppercase; letter-spacing: 0.5px; }
+  p.body { font-size: 10.2px; line-height: 1.3; text-align: justify; }
+  /* ---------- lead ---------- */
+  .lead { padding: 5px 0 5px 0; border-bottom: 1.2px solid #191713; }
+  .lead h2 { font-size: 27px; line-height: 1.05; font-weight: 900; margin: 1px 0 3px 0; }
+  .lead p.body { font-size: 11px; line-height: 1.32; }
+  /* ---------- two-column row ---------- */
+  .row2 { display: flex; gap: 14px; border-bottom: 1.2px solid #191713; padding: 5px 0 5px 0; }
+  .row2 .col { flex: 1; }
+  .row2 .col + .col { border-left: 1px solid #c9bfa5; padding-left: 14px; }
+  .row2 h3 { font-size: 15.5px; line-height: 1.1; font-weight: 900; margin: 1px 0 2.5px 0; }
+  /* ---------- map ---------- */
+  .mapband { border-bottom: 1.2px solid #191713; padding: 4px 0 3px 0; }
+  .mapband .m-head { display: flex; justify-content: space-between; align-items: baseline; }
+  .mapband .m-title { font-family: Helvetica, Arial, sans-serif; font-size: 8.5px; font-weight: 700; letter-spacing: 1.4px; text-transform: uppercase; }
+  .mapband .m-note { font-family: Helvetica, Arial, sans-serif; font-size: 8px; color: #57503f; }
+  /* ---------- grid of stories ---------- */
+  .grid { display: flex; gap: 14px; border-bottom: 1.2px solid #191713; padding: 5px 0 5px 0; }
+  .grid .gcol { flex: 1; display: flex; flex-direction: column; gap: 6px; }
+  .grid .gcol + .gcol { border-left: 1px solid #c9bfa5; padding-left: 14px; }
+  .story h4 { font-size: 13px; line-height: 1.12; font-weight: 900; margin: 1px 0 2px 0; }
+  .story p.body { font-size: 9.6px; line-height: 1.29; }
+  /* ---------- briefs ---------- */
+  .briefs { border-bottom: 1.2px solid #191713; padding: 4px 0 4px 0; }
+  .briefs .b-head { font-family: Helvetica, Arial, sans-serif; font-size: 8.5px; font-weight: 700; letter-spacing: 1.4px; text-transform: uppercase; margin-bottom: 2.5px; }
+  .briefs .b-cols { display: flex; gap: 14px; }
+  .briefs .b-col { flex: 1; }
+  .briefs .b-col + .b-col { border-left: 1px solid #c9bfa5; padding-left: 14px; }
+  .briefs p { font-size: 9px; line-height: 1.29; margin-bottom: 2.2px; text-align: left; }
+  .briefs .rg { font-family: Helvetica, Arial, sans-serif; font-size: 7.8px; font-weight: 700; letter-spacing: 0.7px; color: #9c1f1f; text-transform: uppercase; }
+  /* ---------- date check + footer ---------- */
+  .datecheck { margin-top: 4px; border: 1.6px solid #191713; padding: 3.5px 7px 4px 7px; background: #efe7d0; }
+  .datecheck .d-head { font-family: Helvetica, Arial, sans-serif; font-size: 8.5px; font-weight: 700; letter-spacing: 1.3px; text-transform: uppercase; }
+  .datecheck p { font-size: 8.9px; line-height: 1.29; margin-top: 1px; }
+  .footer { display: flex; justify-content: space-between; margin-top: 3.5px; font-family: Helvetica, Arial, sans-serif; font-size: 7.8px; color: #57503f; text-transform: uppercase; letter-spacing: 0.5px; }
+</style>
+</head>
+<body>
+
+  <!-- ================= MASTHEAD ================= -->
+  <div class="masthead">
+    <h1>The World on Tuesday</h1>
+    <div class="tag">One day&rsquo;s world news, in one image &mdash; every story sourced, every story marked how sure we are</div>
+  </div>
+  <div class="dateline">
+    <span>Vol. 1 &middot; No. 24</span>
+    <b>Tuesday 24 November 2026</b>
+    <span>8 main stories &middot; 12 briefs &middot; 6 regions</span>
+  </div>
+
+  <!-- ================= TIMELINE ================= -->
+  <div class="timeline">
+    <div class="t-head">Three days in context &mdash; all times UTC</div>
+    <div class="t-row">
+      <div class="t-day"><b>Sun 22</b> &mdash; Attack at Benghazi port; a Russian corvette is struck off Libya&rsquo;s coast. Ukraine&rsquo;s role emerges over the next two days.</div>
+      <div class="t-day"><b>Mon 23</b> &mdash; COP31 ends in Antalya with no deal. Nvidia&rsquo;s board votes to bring Jensen Huang back. Israel strikes Gaza; an UNRWA worker is among the dead.</div>
+      <div class="t-day today"><b>Tue 24 &mdash; today</b> &mdash; Mines hit three tankers in Hormuz. Zaporizhzhia flats struck overnight. Seoul&rsquo;s five-minute shelter alert. The UN seeks a Benghazi inquiry.</div>
+    </div>
+  </div>
+
+  <!-- ================= LEAD ================= -->
+  <div class="lead">
+    <div class="kicker"><span class="num">1</span>Strait of Hormuz &middot; Energy &middot; Iran war</div>
+    <h2>Three tankers strike mines in Hormuz as Iran defies the US blockade<span class="stamp">Confirmed</span></h2>
+    <p class="body">Iran said three oil tankers hit mines and caught fire in the Strait of Hormuz, the waterway that carries a fifth of the world&rsquo;s oil, and Tehran refused talks with Washington until its seven conditions are met. Foreign ministry spokesman Esmaeil Baghaei called the US naval blockade, reimposed in July, a military aggression, and said Iran would use &ldquo;any available tool&rdquo; to confront it. Vice-President JD Vance and Secretary of State Marco Rubio met Qatar&rsquo;s prime minister separately at the White House. <span class="src">Sources: AP &middot; Reuters</span></p>
+  </div>
+
+  <!-- ================= STORIES 2 + 3 ================= -->
+  <div class="row2">
+    <div class="col">
+      <div class="kicker"><span class="num">2</span>Technology &middot; Markets</div>
+      <h3>Huang restored at Nvidia; Nasdaq leaps 6.51% and Asia&rsquo;s chip shares soar<span class="stamp">Confirmed</span></h3>
+      <p class="body">Nvidia&rsquo;s board unanimously reinstated founder Jensen Huang as chief executive, and President Trump said he personally persuaded the board. Asia followed on Tuesday: Taiwan&rsquo;s Taiex rose ~9% (TSMC up nearly 10%) and Seoul&rsquo;s Kospi gained over 6% through 5,000. SEC staff are also investigating accounting questions at the chipmaker, Reuters reported. <span class="src">Sources: Reuters &middot; AP</span></p>
+    </div>
+    <div class="col">
+      <div class="kicker"><span class="num">3</span>Russia&ndash;Ukraine war</div>
+      <h3>Russian strike on Zaporizhzhia flats kills two and wounds 40<span class="stamp">Confirmed</span></h3>
+      <p class="body">An overnight Russian attack struck an apartment building in the city of Zaporizhzhia, killing two people and wounding 40, including four children, regional governor Mykhailo Semikin said. In Berlin, Germany became the first country granted access to Ukraine&rsquo;s Delta battlefield-management system. <span class="src">Sources: Reuters &middot; AP</span></p>
+    </div>
+  </div>
+
+  <!-- ================= MAP ================= -->
+  <div class="mapband">
+    <div class="m-head">
+      <span class="m-title">The day on the map &mdash; numbered stories</span>
+      <span class="m-note">Schematic, not to scale</span>
+    </div>
+    <svg width="732" height="100" viewBox="0 0 732 118" preserveAspectRatio="xMidYMid meet" aria-label="Schematic world map">
+      <!-- continents, schematic silhouettes -->
+      <g fill="#ddd2b4" stroke="#8f8465" stroke-width="1">
+        <path d="M28,38 L70,22 L118,20 L142,32 L128,48 L104,52 L92,68 L74,60 L52,62 L34,54 Z"/><!-- N America -->
+        <path d="M104,74 L126,70 L136,84 L130,104 L116,110 L106,94 Z"/><!-- S America -->
+        <path d="M338,26 L366,20 L388,28 L384,42 L362,46 L342,40 Z"/><!-- Europe -->
+        <path d="M344,52 L376,48 L392,62 L386,92 L366,104 L350,84 Z"/><!-- Africa -->
+        <path d="M392,24 L470,16 L540,22 L566,40 L520,52 L470,46 L430,52 L398,42 Z"/><!-- Asia -->
+        <path d="M470,58 L520,54 L548,66 L528,80 L486,78 L466,68 Z"/><!-- SE Asia -->
+        <path d="M566,84 L606,80 L620,92 L600,106 L572,100 Z"/><!-- Australia -->
+      </g>
+      <!-- markers -->
+      <g font-family="Helvetica, Arial, sans-serif" font-size="9" font-weight="700" text-anchor="middle">
+        <circle cx="52" cy="40" r="8" fill="#9c1f1f"/><text x="52" y="43.5" fill="#f7f2e7">2</text>
+        <circle cx="330" cy="28" r="8" fill="#191713"/><text x="330" y="31.5" fill="#f7f2e7">8</text>
+        <circle cx="356" cy="34" r="8" fill="#191713"/><text x="356" y="37.5" fill="#f7f2e7">6</text>
+        <circle cx="400" cy="36" r="8" fill="#191713"/><text x="400" y="39.5" fill="#f7f2e7">3</text>
+        <circle cx="374" cy="60" r="8" fill="#191713"/><text x="374" y="63.5" fill="#f7f2e7">5</text>
+        <circle cx="412" cy="54" r="8" fill="#191713"/><text x="412" y="57.5" fill="#f7f2e7">4</text>
+        <circle cx="440" cy="58" r="8" fill="#9c1f1f"/><text x="440" y="61.5" fill="#f7f2e7">1</text>
+        <circle cx="366" cy="86" r="8" fill="#191713"/><text x="366" y="89.5" fill="#f7f2e7">7</text>
+      </g>
+      <g font-family="Helvetica, Arial, sans-serif" font-size="7.5" fill="#57503f">
+        <text x="30" y="114">AMERICAS</text>
+        <text x="330" y="114">EUROPE &middot; AFRICA</text>
+        <text x="440" y="114">MIDDLE EAST &middot; ASIA</text>
+        <text x="580" y="114">OCEANIA</text>
+      </g>
+    </svg>
+  </div>
+
+  <!-- ================= STORIES 4-8 ================= -->
+  <div class="grid">
+    <div class="gcol">
+      <div class="story">
+        <div class="kicker"><span class="num">4</span>Gaza</div>
+        <h4>Israeli strike kills Hamas&rsquo;s security chief in Gaza<span class="stamp">Confirmed</span></h4>
+        <p class="body">Israeli airstrikes killed Naeem Abu Nahel, director of Hamas&rsquo;s internal security apparatus, and six others, including two police officers, medics and police said. Monday&rsquo;s strikes had already killed at least three people in Gaza, one of them a worker for the UN Palestinian refugee agency. <span class="src">Sources: Reuters &middot; Al Jazeera</span></p>
+      </div>
+      <div class="story">
+        <div class="kicker"><span class="num">5</span>Libya &middot; United Nations</div>
+        <h4>UN demands an inquiry into the Benghazi port attack<span class="stamp">Confirmed</span></h4>
+        <p class="body">The UN Support Mission in Libya called for an independent investigation into Sunday&rsquo;s attacks at Benghazi port and on a Russian warship off the eastern coast, as Kyiv explained its strike in Libya. <span class="src">Sources: UN News &middot; Reuters</span></p>
+      </div>
+    </div>
+    <div class="gcol">
+      <div class="story">
+        <div class="kicker"><span class="num">6</span>NATO &middot; Space</div>
+        <h4>Rutte: NATO will defend space after Russian nuclear-satellite reports<span class="stamp rep">Reported</span></h4>
+        <p class="body">NATO chief Mark Rutte said the alliance will defend against any threats in space, after reports that Russia is preparing to launch a nuclear-armed satellite. Western intelligence, via German media, puts a launch within weeks. <span class="src">Sources: BBC &middot; German media</span></p>
+      </div>
+      <div class="story">
+        <div class="kicker"><span class="num">7</span>Congo &middot; Ebola</div>
+        <h4>Fighting traps Ebola teams near an Ituri hospital<span class="stamp">Confirmed</span></h4>
+        <p class="body">Heavy fighting near a hospital in Ituri province, DR Congo, disrupted Ebola response work and forced emergency teams to take cover for over 24 hours, the WHO said. <span class="src">Sources: UN News &middot; WHO</span></p>
+      </div>
+      <div class="story">
+        <div class="kicker"><span class="num">8</span>Britain &middot; Security</div>
+        <h4>Britain warns Ukraine&rsquo;s suppliers to brace for Russian sabotage<span class="stamp">Confirmed</span></h4>
+        <p class="body">Britain&rsquo;s defence ministry and MI5 issued a rare public alert: companies helping Ukraine&rsquo;s military face a heightened Russian sabotage risk and should harden sites and supply chains now. <span class="src">Sources: Reuters &middot; AP</span></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= BRIEFS ================= -->
+  <div class="briefs">
+    <div class="b-head">The world in brief &mdash; twelve more of Tuesday&rsquo;s stories</div>
+    <div class="b-cols">
+      <div class="b-col">
+        <p><span class="rg">Asia</span> Russian aircraft enter South Korea&rsquo;s air-defence zone; Seoul issues a shelter alert for Ulleung Island at 07:52 and lifts it five minutes later. <i>(AP)</i></p>
+        <p><span class="rg">Europe</span> Seven countries press the EU to limit Russian tourist and sports visas. <i>(Kyiv Independent)</i></p>
+        <p><span class="rg">Middle East</span> Iraq&rsquo;s prime minister orders the oil ministry to run fields in areas under Kurdish security control, after a smuggling inquiry. <i>(Reuters)</i></p>
+        <p><span class="rg">Asia</span> Malaysia will return more than 6,500 Rohingya refugees to Myanmar. <i>(Reports)</i></p>
+      </div>
+      <div class="b-col">
+        <p><span class="rg">Asia</span> Ousted Bangladeshi leader Sheikh Hasina plans to return home from exile on 16 December, her spokesman tells Reuters. <i>(Reuters)</i></p>
+        <p><span class="rg">Asia</span> South Korea offers rewards of up to $375,000 for tips on AI cheating in the national college entrance exam. <i>(AP)</i></p>
+        <p><span class="rg">Americas</span> A Gulf storm and near-record California king tides threaten Thanksgiving-week travel and coastal flooding. <i>(AP)</i></p>
+        <p><span class="rg">Gulf</span> A bus crash in Ras Al Khaimah, UAE, kills 13 people and injures 14. <i>(Reports)</i></p>
+      </div>
+      <div class="b-col">
+        <p><span class="rg">Trade</span> The US Commerce Department blacklists Singapore cloud firm Megaspeed International after months of bipartisan pressure. <i>(Reuters)</i></p>
+        <p><span class="rg">Ukraine</span> Zelensky urges a NATO parliamentary assembly in Berlin to admit Ukraine; Moscow rejects NATO-style guarantees. <i>(Reports)</i></p>
+        <p><span class="rg">Science</span> Astronomers find a quasar formed just 630 million years after the Big Bang &mdash; the earliest yet seen. <i>(AP)</i></p>
+        <p><span class="rg">America</span> President Trump pardons the Thanksgiving turkeys Freedom and Feather at the White House. <i>(AP)</i></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= DATE CHECK + FOOTER ================= -->
+  <div class="datecheck">
+    <span class="d-head">Date check</span>
+    <p>Every story on this page happened, or was first reported, on <b>Tuesday 24 November 2026</b>. Left out as older news: Sunday&rsquo;s Benghazi attack itself (today&rsquo;s story is the UN&rsquo;s inquiry call), Monday&rsquo;s COP31 collapse and the Nvidia board vote (today&rsquo;s stories are their fallout &mdash; the market surge and the SEC probe). <b>Confirmed</b> = two or more independent reports agree. <b>Reported</b> = a single source carries it at press time.</p>
+  </div>
+  <div class="footer">
+    <span>The World on Tuesday &middot; 24 November 2026</span>
+    <span>Set in HTML &amp; SVG &middot; Rendered 768 &times; 1024</span>
+    <span>Page 1 of 1</span>
+  </div>
+
+</body>
+</html>
